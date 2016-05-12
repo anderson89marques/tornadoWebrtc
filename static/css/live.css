@@ -1,0 +1,46 @@
+video{
+    width: 480px;
+    height: 360px;
+    background: #777;
+}
+
+footer {
+    background: #222;
+    color: #ccc;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.container {
+    width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.error {
+    color: #ff9696;
+}
+
+#content-body {
+    margin-top: 20px;
+}
+
+.class_width_border_chat {
+    width: 100%;
+    border: solid 2px blue;
+}
+
+#divconversation {
+    height: 400px;
+}
+
+#textmsg {
+    height: 100px;
+}
+
+#buttonmsg {
+    height: 30px;
+    width: 100px;
+}

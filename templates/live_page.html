@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="liveApp">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link href="{{static_url('css/bootstrap.min.css')}}" rel="stylesheet" type="text/css">
+    <title>Title</title>
+    <title>Tornado WebRTC</title>
+    <link rel="stylesheet" type="text/css" href="{{ static_url('css/bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ static_url('css/live.css') }}">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="{{ static_url('js/adapter.js') }}"></script>
+    <script src="{{ static_url('js/angular/angular.min.js')}}"></script>
+    <script src="{{ static_url('js/live.js')}}"></script>
+    <script>
+       $(window).on('beforeunload', function() {
+           return 'Deseja mesmo sair?';
+       });
+
+       $(window).on("unload", function () {
+           $.ajax({
+               url: "/logout",
+               type: "GET",
+               data: {'m': 'and'}
+           });
+       });
+
+    </script>
+
+</head>
+<body ng-controller="liveAppCtrl">
+
+    <div id="content-body" class="container-fluid">
+        <div class="row">
+            <nav class="navbar navbar-default navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="#">
+                            <span style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;">LIVE</span>
+                        </a>
+                    </div>
+                    <p class="navbar-text navbar-right">Bem vindo, {{user}} | <a href="/logout">Sair</a></p>
+                </div>
+            </nav>
+            <div style="margin-top: 50px;">
+                <div class="col-md-6 col-lg-6 col-sm-6" >
+                    <video id="remote" autoplay></video>
+                </div>
+
+                <div class="col-md-offset-1 col-md-5 col-lg-5 col-sm-5">
+                <div class="container">
+                    <video id="local" autoplay muted></video>
+                    <div class="forms">
+                        <ul>
+                            <li><label class="small"><input id="audio" type="checkbox" checked>Use mic</label></li>
+                            <li><label class="small"><input id="video" type="checkbox" checked>Use webcam</label></li>
+                            <li class="btn-group">
+                                {% if 'role_teacher' in principals%}
+                                    <button  class="btn btn-call" ng-click="call('role_teacher')">I want to call</button>
+                                    <button  class="btn btn-receive" ng-click="receive('role_teacher')">I want to receive a call</button>
+                                {% else %}
+                                    <button  class="btn btn-call" ng-click="call('role_user')">I want to call</button>
+                                    <button  class="btn btn-receive" ng-click="receive('role_user')">I want to receive a call</button>
+                                {%end%}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+      <span id="streaming" class="small"></span>
+      <span id="status" class="small"></span>
+    </footer>
+</body>
+</html>

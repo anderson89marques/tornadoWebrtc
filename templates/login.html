@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+<head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login</title>
+        <link rel="stylesheet" href="{{ static_url('css/bootstrap.min.css') }}"/>
+        <link rel="stylesheet" href="{{ static_url('css/login.css') }}"/>
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 col-md-4 col-md-offset-4">
+            <h1 class="text-center login-title">Logar</h1>
+            <div class="account-wall">
+                <img class="profile-img" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120"
+                     alt="">
+                <form class="form-signin" method="post">
+                    <input type="hidden" name="room" value="{{room}}">
+                    <input id="login" type="text" name="username" class="form-control" placeholder="Email" required autofocus>
+                    <input id="senha" type="password" name="senha" class="form-control" placeholder="Password" required>
+                    <button name="login" class="btn btn-lg btn-primary btn-block" type="submit">
+                        Login</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
