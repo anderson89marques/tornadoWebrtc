@@ -1,0 +1,16 @@
+APScheduler==3.0.5
+ecdsa==0.13
+Jinja2==2.8
+MarkupSafe==0.23
+paramiko==1.16.0
+passlib==1.6.5
+psutil==4.1.0
+psycopg2==2.6.1
+pycrypto==2.6.1
+pytz==2016.2
+PyYAML==3.11
+six==1.10.0
+SQLAlchemy==1.0.12
+tornado==4.3
+tzlocal==1.2.2
+websocket-client==0.35.0
