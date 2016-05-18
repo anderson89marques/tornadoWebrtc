@@ -8,7 +8,10 @@ pip install -r requirements
 # O que é o WebRTC?
 WebRTC, conhecido também como Web Real-Time Communications, é um projeto de software livre promovido pelo Google, 
 Mozilla e outros e permite Comunicações em tempo real livre de plugin via API do Javascript. Ele facilita aplicativos a 
-se comunicarem entre navegadores para chamada de voz, bate-papo por vídeo e compartilhamento de arquivo.
+se comunicarem entre navegadores(browse-to-browse)para chamada de voz, bate-papo por vídeo e compartilhamento de arquivo.
+
+Assim que a sinalização é feita entre os browsers eles começam a se comunicar diretamente sem que os dados precisem 
+passar pelo servidor da aplicação.
 
 # Como usar a App?
 
